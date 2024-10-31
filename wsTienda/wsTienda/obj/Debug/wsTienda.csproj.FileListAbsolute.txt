@@ -1,0 +1,2 @@
+C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\obj\Debug\wsTienda.csproj.AssemblyReference.cache
+C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\obj\Debug\wsTienda.csproj.CoreCompileInputs.cache
