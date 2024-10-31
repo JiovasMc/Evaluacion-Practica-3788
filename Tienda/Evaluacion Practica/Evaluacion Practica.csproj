@@ -101,9 +101,29 @@
     <Content Include="Scripts\jQuery\jQuery 3.7.1.js" />
     <Content Include="Scripts\toastr\toastr.js" />
     <Content Include="Scripts\UIBlock\UIBlock.js" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsTienda\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsTienda\wsTienda.disco" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsTienda\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\Controller\controller_tienda.cs" />
     <Compile Include="Forms\Compra\detalleCompra.aspx.cs">
       <DependentUpon>detalleCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Web References\wsTienda\wsTienda.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,7 +148,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://localhost:44320/wsTienda.asmx%3fop=HelloWorld">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsTienda\</RelPath>
+      <UpdateFromURL>https://localhost:44320/wsTienda.asmx%3fop=HelloWorld</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Evaluacion_Practica_wsTienda_wsTienda</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -22,15 +22,17 @@ namespace wsTienda
         private clssConnection clsConn = new clssConnection();
         private XmlDocument schema;
 
-        public void miclase(){
+        public void clssSchema(){
             schema = new XmlDocument();
-            schema.Load(String.Concat(AppDomain.CurrentDomain.BaseDirectory, "App_Data\\Schemas\\wsTienda.xml"));
+            schema.Load(String.Concat(AppDomain.CurrentDomain.BaseDirectory, "App_Data\\Schemas\\wsTienda\\wsTienda.xml"));
          }
 
         [WebMethod]
         public DataSet HelloWorld()
         {
-             string strSql;
+            schema = new XmlDocument();
+            schema.Load(String.Concat(AppDomain.CurrentDomain.BaseDirectory, "App_Data\\Schemas\\wsTienda\\wsTienda.xml"));
+            string strSql;
              var dts = new DataSet();
             try
             {
