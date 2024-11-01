@@ -68,6 +68,8 @@ C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\bin\Microsoft.C
 C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\bin\es\System.Web.Optimization.resources.dll
 C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
 C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\obj\Debug\wsTienda.csproj.AssemblyReference.cache
+C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\obj\Debug\wsTienda.Properties.Resources.resources
+C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\obj\Debug\wsTienda.csproj.GenerateResource.cache
 C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\obj\Debug\wsTienda.csproj.CoreCompileInputs.cache
 C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\obj\Debug\wsTienda.csproj.Up2Date
 C:\Users\JiovasMc\source\repos\evaluacion_3788\wsTienda\wsTienda\obj\Debug\wsTienda.dll

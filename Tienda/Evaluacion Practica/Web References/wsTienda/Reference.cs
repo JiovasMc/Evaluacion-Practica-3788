@@ -32,6 +32,18 @@ namespace Evaluacion_Practica.wsTienda {
         
         private System.Threading.SendOrPostCallback HelloWorldOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetHistorialOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getDetalleCompraOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getProductosOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getClientesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getStatusOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback saveVentaOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -74,10 +86,28 @@ namespace Evaluacion_Practica.wsTienda {
         public event HelloWorldCompletedEventHandler HelloWorldCompleted;
         
         /// <remarks/>
+        public event GetHistorialCompletedEventHandler GetHistorialCompleted;
+        
+        /// <remarks/>
+        public event getDetalleCompraCompletedEventHandler getDetalleCompraCompleted;
+        
+        /// <remarks/>
+        public event getProductosCompletedEventHandler getProductosCompleted;
+        
+        /// <remarks/>
+        public event getClientesCompletedEventHandler getClientesCompleted;
+        
+        /// <remarks/>
+        public event getStatusCompletedEventHandler getStatusCompleted;
+        
+        /// <remarks/>
+        public event saveVentaCompletedEventHandler saveVentaCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataSet HelloWorld() {
+        public System.Data.DataTable HelloWorld() {
             object[] results = this.Invoke("HelloWorld", new object[0]);
-            return ((System.Data.DataSet)(results[0]));
+            return ((System.Data.DataTable)(results[0]));
         }
         
         /// <remarks/>
@@ -97,6 +127,186 @@ namespace Evaluacion_Practica.wsTienda {
             if ((this.HelloWorldCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.HelloWorldCompleted(this, new HelloWorldCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetHistorial", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetHistorial(int nombre, int clave, string estatus) {
+            object[] results = this.Invoke("GetHistorial", new object[] {
+                        nombre,
+                        clave,
+                        estatus});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetHistorialAsync(int nombre, int clave, string estatus) {
+            this.GetHistorialAsync(nombre, clave, estatus, null);
+        }
+        
+        /// <remarks/>
+        public void GetHistorialAsync(int nombre, int clave, string estatus, object userState) {
+            if ((this.GetHistorialOperationCompleted == null)) {
+                this.GetHistorialOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetHistorialOperationCompleted);
+            }
+            this.InvokeAsync("GetHistorial", new object[] {
+                        nombre,
+                        clave,
+                        estatus}, this.GetHistorialOperationCompleted, userState);
+        }
+        
+        private void OnGetHistorialOperationCompleted(object arg) {
+            if ((this.GetHistorialCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetHistorialCompleted(this, new GetHistorialCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getDetalleCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getDetalleCompra(int venta_id) {
+            object[] results = this.Invoke("getDetalleCompra", new object[] {
+                        venta_id});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getDetalleCompraAsync(int venta_id) {
+            this.getDetalleCompraAsync(venta_id, null);
+        }
+        
+        /// <remarks/>
+        public void getDetalleCompraAsync(int venta_id, object userState) {
+            if ((this.getDetalleCompraOperationCompleted == null)) {
+                this.getDetalleCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetDetalleCompraOperationCompleted);
+            }
+            this.InvokeAsync("getDetalleCompra", new object[] {
+                        venta_id}, this.getDetalleCompraOperationCompleted, userState);
+        }
+        
+        private void OngetDetalleCompraOperationCompleted(object arg) {
+            if ((this.getDetalleCompraCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getDetalleCompraCompleted(this, new getDetalleCompraCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getProductos", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getProductos(string estatus) {
+            object[] results = this.Invoke("getProductos", new object[] {
+                        estatus});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProductosAsync(string estatus) {
+            this.getProductosAsync(estatus, null);
+        }
+        
+        /// <remarks/>
+        public void getProductosAsync(string estatus, object userState) {
+            if ((this.getProductosOperationCompleted == null)) {
+                this.getProductosOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProductosOperationCompleted);
+            }
+            this.InvokeAsync("getProductos", new object[] {
+                        estatus}, this.getProductosOperationCompleted, userState);
+        }
+        
+        private void OngetProductosOperationCompleted(object arg) {
+            if ((this.getProductosCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProductosCompleted(this, new getProductosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getClientes", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getClientes(string estatus) {
+            object[] results = this.Invoke("getClientes", new object[] {
+                        estatus});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getClientesAsync(string estatus) {
+            this.getClientesAsync(estatus, null);
+        }
+        
+        /// <remarks/>
+        public void getClientesAsync(string estatus, object userState) {
+            if ((this.getClientesOperationCompleted == null)) {
+                this.getClientesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetClientesOperationCompleted);
+            }
+            this.InvokeAsync("getClientes", new object[] {
+                        estatus}, this.getClientesOperationCompleted, userState);
+        }
+        
+        private void OngetClientesOperationCompleted(object arg) {
+            if ((this.getClientesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getClientesCompleted(this, new getClientesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getStatus", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getStatus(string estatus) {
+            object[] results = this.Invoke("getStatus", new object[] {
+                        estatus});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getStatusAsync(string estatus) {
+            this.getStatusAsync(estatus, null);
+        }
+        
+        /// <remarks/>
+        public void getStatusAsync(string estatus, object userState) {
+            if ((this.getStatusOperationCompleted == null)) {
+                this.getStatusOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetStatusOperationCompleted);
+            }
+            this.InvokeAsync("getStatus", new object[] {
+                        estatus}, this.getStatusOperationCompleted, userState);
+        }
+        
+        private void OngetStatusOperationCompleted(object arg) {
+            if ((this.getStatusCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getStatusCompleted(this, new getStatusCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/saveVenta", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string saveVenta(int cliente_id, System.Data.DataTable detalle_compras) {
+            object[] results = this.Invoke("saveVenta", new object[] {
+                        cliente_id,
+                        detalle_compras});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void saveVentaAsync(int cliente_id, System.Data.DataTable detalle_compras) {
+            this.saveVentaAsync(cliente_id, detalle_compras, null);
+        }
+        
+        /// <remarks/>
+        public void saveVentaAsync(int cliente_id, System.Data.DataTable detalle_compras, object userState) {
+            if ((this.saveVentaOperationCompleted == null)) {
+                this.saveVentaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsaveVentaOperationCompleted);
+            }
+            this.InvokeAsync("saveVenta", new object[] {
+                        cliente_id,
+                        detalle_compras}, this.saveVentaOperationCompleted, userState);
+        }
+        
+        private void OnsaveVentaOperationCompleted(object arg) {
+            if ((this.saveVentaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.saveVentaCompleted(this, new saveVentaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -137,10 +347,166 @@ namespace Evaluacion_Practica.wsTienda {
         }
         
         /// <remarks/>
-        public System.Data.DataSet Result {
+        public System.Data.DataTable Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void GetHistorialCompletedEventHandler(object sender, GetHistorialCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetHistorialCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetHistorialCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void getDetalleCompraCompletedEventHandler(object sender, getDetalleCompraCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getDetalleCompraCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getDetalleCompraCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void getProductosCompletedEventHandler(object sender, getProductosCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getProductosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getProductosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void getClientesCompletedEventHandler(object sender, getClientesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getClientesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getClientesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void getStatusCompletedEventHandler(object sender, getStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void saveVentaCompletedEventHandler(object sender, saveVentaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class saveVentaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal saveVentaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

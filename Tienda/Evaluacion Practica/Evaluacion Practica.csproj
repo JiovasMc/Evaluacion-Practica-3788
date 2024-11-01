@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="App_Themes\datatables\datatables.css" />
     <Content Include="App_Themes\datatables\datatables.min.css" />
+    <Content Include="App_Themes\jquery-ui\jqueru-ui.css" />
     <Content Include="App_Themes\toastr\toastr.css" />
     <Content Include="Forms\Compra\detalleCompra.aspx" />
     <Content Include="Global.asax" />
@@ -99,6 +100,8 @@
     <Content Include="Scripts\datatables\datatables.min.js" />
     <Content Include="Scripts\Forms\Compra\detalleCompra.js" />
     <Content Include="Scripts\jQuery\jQuery 3.7.1.js" />
+    <Content Include="Scripts\jQuery\jquery-migrate-3.0.0.min.js" />
+    <Content Include="Scripts\jQuery\jquery-ui.min.js" />
     <Content Include="Scripts\toastr\toastr.js" />
     <Content Include="Scripts\UIBlock\UIBlock.js" />
     <None Include="Properties\Settings.settings">
@@ -113,6 +116,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\VO\ClienteVO.cs" />
+    <Compile Include="App_Code\VO\detalleVentaVO.cs" />
+    <Compile Include="App_Code\VO\Detalle_comprasVO.cs" />
+    <Compile Include="App_Code\VO\estatusVO.cs" />
+    <Compile Include="App_Code\VO\ProductoVO.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -123,7 +131,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Content Include="App_Code\Controller\controller_tienda.cs" />
+    <Compile Include="App_Code\Controller\controller_tienda.cs" />
     <Compile Include="Forms\Compra\detalleCompra.aspx.cs">
       <DependentUpon>detalleCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

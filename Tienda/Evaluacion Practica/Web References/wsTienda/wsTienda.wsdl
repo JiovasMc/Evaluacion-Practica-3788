@@ -11,11 +11,140 @@
             <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHistorial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nombre" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="clave" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="estatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHistorialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHistorialResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDetalleCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="venta_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDetalleCompraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDetalleCompraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="estatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="estatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="estatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cliente_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="detalle_compras">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saveVentaResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -27,10 +156,70 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
+  <wsdl:message name="GetHistorialSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHistorial" />
+  </wsdl:message>
+  <wsdl:message name="GetHistorialSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHistorialResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDetalleCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:getDetalleCompra" />
+  </wsdl:message>
+  <wsdl:message name="getDetalleCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:getDetalleCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductos" />
+  </wsdl:message>
+  <wsdl:message name="getProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:getClientes" />
+  </wsdl:message>
+  <wsdl:message name="getClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:getStatus" />
+  </wsdl:message>
+  <wsdl:message name="getStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:getStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:saveVenta" />
+  </wsdl:message>
+  <wsdl:message name="saveVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:saveVentaResponse" />
+  </wsdl:message>
   <wsdl:portType name="wsTiendaSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistorial">
+      <wsdl:input message="tns:GetHistorialSoapIn" />
+      <wsdl:output message="tns:GetHistorialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDetalleCompra">
+      <wsdl:input message="tns:getDetalleCompraSoapIn" />
+      <wsdl:output message="tns:getDetalleCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <wsdl:input message="tns:getProductosSoapIn" />
+      <wsdl:output message="tns:getProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientes">
+      <wsdl:input message="tns:getClientesSoapIn" />
+      <wsdl:output message="tns:getClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <wsdl:input message="tns:getStatusSoapIn" />
+      <wsdl:output message="tns:getStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveVenta">
+      <wsdl:input message="tns:saveVentaSoapIn" />
+      <wsdl:output message="tns:saveVentaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wsTiendaSoap" type="tns:wsTiendaSoap">
@@ -44,11 +233,119 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetHistorial">
+      <soap:operation soapAction="http://tempuri.org/GetHistorial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetalleCompra">
+      <soap:operation soapAction="http://tempuri.org/getDetalleCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <soap:operation soapAction="http://tempuri.org/getProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientes">
+      <soap:operation soapAction="http://tempuri.org/getClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap:operation soapAction="http://tempuri.org/getStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveVenta">
+      <soap:operation soapAction="http://tempuri.org/saveVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="wsTiendaSoap12" type="tns:wsTiendaSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistorial">
+      <soap12:operation soapAction="http://tempuri.org/GetHistorial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetalleCompra">
+      <soap12:operation soapAction="http://tempuri.org/getDetalleCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <soap12:operation soapAction="http://tempuri.org/getProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientes">
+      <soap12:operation soapAction="http://tempuri.org/getClientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap12:operation soapAction="http://tempuri.org/getStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveVenta">
+      <soap12:operation soapAction="http://tempuri.org/saveVenta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

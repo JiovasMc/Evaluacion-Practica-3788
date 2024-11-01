@@ -3,4 +3,31 @@
   <getDetalleVenta>
     select * from tienda.cliente
   </getDetalleVenta>
+
+  <getProductos>
+    select producto_id, descripcion, costo_unitario
+    from Tienda.producto where estatus = (case when @estatus = '0' then estatus else 'TT:02:01' end)
+  </getProductos>
+
+  <getClientes>
+    select cliente_id, nombre, clave, mail, estatus
+    from Tienda.cliente
+    where estatus = (case when @estatus = '0' then estatus else 'TT:01:01' end)
+  </getClientes>
+
+  <getStatus>
+    select catalogo_id, descripcion from Tienda.catalogs where catalogo_id like @estatus + ':%' and isvisible =1
+  </getStatus>
+
+  <saveVenta>
+    insert into Tienda.venta
+    values(sysdatetime(), @cliente_id, 'TT:03:01')
+    
+    SELECT MAX(venta_id) FROM Tienda.venta
+  </saveVenta>
+
+  <saveVenta_detalle>
+    insert into Tienda.detalle_venta
+    values(@venta_id, @producto_id, @cantidad, @descuento, @total)
+  </saveVenta_detalle>
 </wsTienda>

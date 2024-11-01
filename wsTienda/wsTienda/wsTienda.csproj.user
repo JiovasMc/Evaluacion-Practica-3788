@@ -21,8 +21,7 @@
           <SilverlightDebugging>False</SilverlightDebugging>
           <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>False</SQLDebugging>
-          <ExternalProgram>
-          </ExternalProgram>
+          <ExternalProgram>C:\Users\JiovasMc\source\repos\evaluacion_3788\Tienda\Evaluacion Practica\index.html</ExternalProgram>
           <StartExternalURL>
           </StartExternalURL>
           <StartCmdLineArguments>
@@ -30,7 +29,7 @@
           <StartWorkingDirectory>
           </StartWorkingDirectory>
           <EnableENC>True</EnableENC>
-          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+          <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
